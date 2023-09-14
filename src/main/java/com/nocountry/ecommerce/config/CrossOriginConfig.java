@@ -12,7 +12,7 @@ public class CrossOriginConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry){
         
         registry.addMapping("/**")
-                .allowedOrigins("https://meliclon.web.app") 
+                .allowedOrigins("https://meliclon.web.app","https://localhost:3000/")
                 .allowedMethods("GET","POST","PUT", "DELETE")
                 .allowedHeaders("*");
     }

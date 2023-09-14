@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 @RestController
 @RequestMapping("api/client")
+@CrossOrigin(origins = "*")
 public class ClientController {
     @Autowired
     ClientService clientService;

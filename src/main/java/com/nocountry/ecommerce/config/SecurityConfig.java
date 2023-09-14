@@ -51,10 +51,7 @@ public class SecurityConfig {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeHttpRequests()
-                .requestMatchers(HttpMethod.PUT,"/api/account/change/**",
-                        "api/account/findallcustomerlist"
-                        )
-                .hasRole(Role.ADMIN.name())
+
 
                 .requestMatchers(HttpMethod.GET, "/customer/**").hasRole(Role.USER.name())
 

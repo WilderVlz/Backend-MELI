@@ -16,7 +16,7 @@ public class ProductCart {
     private Account userBuyer;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "id")
     private Product product;
 
     @Column(name = "quantity")

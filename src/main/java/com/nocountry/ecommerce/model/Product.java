@@ -1,13 +1,10 @@
 package com.nocountry.ecommerce.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 
 import com.nocountry.ecommerce.util.Category;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -17,11 +14,13 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +30,6 @@ public class Product {
     private String description;
     @NotNull
     private Double price;
-    private Category category;
-    private int quantity;
+    private String category;
+    private Integer quantity;
 }

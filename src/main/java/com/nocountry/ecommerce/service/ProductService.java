@@ -15,7 +15,12 @@ public class ProductService implements ProductIMPL{
     ProductRepository productRepository;
 
     @Override
-    public List<Product> getAllProducts() {
+    public Product saveProducts(Product product) {
+        return productRepository.save(product);
+    }
+
+    @Override
+    public List<Product> listProduct() {
         return (List<Product>) productRepository.findAll();
     }
 
@@ -24,13 +29,14 @@ public class ProductService implements ProductIMPL{
         return productRepository.findById(id);
     }
 
+
     @Override
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
 
     @Override
-    public Product updateProduct(Product product){
+    public Product updateProduct(Long id ,Product product){
         return productRepository.save(product);
     }
 }

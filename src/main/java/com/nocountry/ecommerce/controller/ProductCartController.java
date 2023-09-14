@@ -10,6 +10,7 @@ import java.util.LinkedList;
 
 @RestController
 @RequestMapping("/cart")
+@CrossOrigin(origins = "*")
 public class ProductCartController{
     private final ProductCartServiceImpl cartService;
 
