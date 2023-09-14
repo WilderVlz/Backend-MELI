@@ -70,6 +70,8 @@ public class AccountServiceImpl implements AccountService {
         String jwt = jwtProvider.generateToken(saveCustomer);
         customerRegistration.setToken(jwt);
 
+        Account account = accountRepository.findByVerificationCode(verificationCode);
+        account.setActive(true);
 
         customerRepository.save(saveCustomer);
 
