@@ -54,9 +54,7 @@ public class AuthenticationController {
     public ResponseEntity<?> signIn(@RequestBody Account account){
         CustomerLoginResponse signInAccount = authenticationService.signInAndReturnJWT(account);
 
-        if(!signInAccount.isActive()){
-            return new ResponseEntity<>("Account is not active", HttpStatus.BAD_REQUEST);
-        }
+
         return new ResponseEntity<>(signInAccount, HttpStatus.OK);
     }
 
